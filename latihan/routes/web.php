@@ -22,3 +22,14 @@ Route::get("/total/{bil1?}/{bil2?}/{bil3?}", function($bil1, $bil2, $bil3 = 0){
         'bil3' => $bil3,
     ]);
 });
+//=======
+Route::get('/fakultas', function(){
+    // return view('fakultas.index', ["ilkom" => "Fakultas Ilmu Komputer dan Rekayasa"]);
+    // return view('fakultas.index', ["fakultas" => ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ilmu Ekonomi"]]);
+    // return view('fakultas.index')->with("fakultas", [Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ilmu Ekonomi]);
+    $kampus = "Universitas Multi Data Palembang";
+    //$fakultas = [];
+    $fakultas = ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ilmu Ekonomi"];
+
+    return view('fakultas.index', compact('fakultas', 'kampus'));
+});
